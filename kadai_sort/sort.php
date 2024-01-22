@@ -14,25 +14,21 @@
 
         function sort_2way($array, $order) {
 
-        $nums = $array;
-
-        if($order){
-            echo '昇順にソートします<br>';
-            sort($nums);
-            foreach ($nums as $num){
-                echo "$num <br>";
-            }
+        if( $order ){
+            echo '昇順にソートします。<br>';
+            sort($array);
+            
+        }else{
+            echo '降順にソートします。<br>';
+            rsort($array);
         }
-        else{
-            echo '降順にソートします<br>';
-            rsort($nums);
-            foreach($nums as $num){
-                echo "$num <br>";
-            }
+        
+        foreach($array as $value) {
+            echo $value . '<br>';
         }
         }
 
-        sort_2way($nums,true); // 昇順にソートする
+        sort_2way($nums, true); // 昇順にソートする
         sort_2way($nums, false); // 降順にソートする
 
 
